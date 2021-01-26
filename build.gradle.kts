@@ -132,14 +132,6 @@ bintray {
         setLicenses(licenseName)
         with(version) {
             name = project.version.toString()
-            with(gpg) {
-                sign = true
-            }
-            with(mavenCentralSync) {
-                sync = true
-                user = (findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USER"))?.toString()
-                password = (findProperty("sonatypePwd") ?: System.getenv("SONATYPE_PWD"))?.toString()
-            }
         }
     }
     publish = true
