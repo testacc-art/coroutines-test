@@ -19,5 +19,5 @@ jobs:
       - name: Test report
         uses: asadmansr/android-test-report-action@v1.2.0
 
-      - name: Lint
-        run: ./gradlew ktlintCheck ktlintFormat
+#       - name: Lint
+#         run: ./gradlew ktlintCheck ktlintFormat
