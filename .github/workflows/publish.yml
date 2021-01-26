@@ -37,4 +37,4 @@ jobs:
         run: java -version
 
       - name: Publish to Bintray
-        run: ./gradlew -P bintrayUser=${{ secrets.BINTRAY_USER }} -P bintrayKey=${{ secrets.BINTRAY_KEY }} bintrayUpload
+        run: ./gradlew -P bintrayUser=${{ secrets.BINTRAY_USER }} -P bintrayKey=${{ secrets.BINTRAY_KEY }} --no-daemon bintrayUpload
