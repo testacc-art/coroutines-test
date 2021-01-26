@@ -1,3 +1,6 @@
+import com.jfrog.bintray.gradle.BintrayPlugin
+import com.jfrog.bintray.gradle.BintrayExtension
+
 plugins {
     kotlin("jvm")
     `maven-publish`
