@@ -32,6 +32,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 8
+    
+      - name: Check java version
+        run: java -version
 
       - name: Publish to Bintray
         run: ./gradlew -P bintrayUser=${{ secrets.BINTRAY_USER }} -P bintrayKey=${{ secrets.BINTRAY_KEY }} bintrayUpload
