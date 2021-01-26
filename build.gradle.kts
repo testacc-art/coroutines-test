@@ -34,24 +34,6 @@ dependencies {
     testImplementation("org.junit.platform:junit-platform-testkit:$jUnitTestkitVersion")
 }
 
-ext {
-    // This should be same as you've created in bintray
-    bintrayRepo = "wonderful"
-
-    // Name which will be visible on bintray
-    bintrayName = "CheckLibrary"
-
-    // Repository Link (For e.g. GitHub repo)
-    siteUrl = "https://github.com/testacc-art/coroutines-test"
-    gitUrl = "https://github.com/testacc-art/coroutines-test.git"
-    githubRepository= "testacc-art/coroutines-test"
-
-    // License Details
-    licenseName = "The Apache Software License, Version 2.0"
-    licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-    allLicenses = ["Apache-2.0"]
-}
-
 plugins.withType<JavaPlugin> {
     extensions.configure<JavaPluginExtension> {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -141,11 +123,11 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        repo = 
-        name = bintrayName
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = allLicenses
+        repo = "wonderful"
+        name = "CheckLibrary"
+        websiteUrl = "https://github.com/testacc-art/coroutines-test"
+        vcsUrl = "https://github.com/testacc-art/coroutines-test.git"
+        licenses = ["Apache-2.0"]
         publish = true
     }
 }
