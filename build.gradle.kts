@@ -34,6 +34,24 @@ dependencies {
     testImplementation("org.junit.platform:junit-platform-testkit:$jUnitTestkitVersion")
 }
 
+ext {
+    // This should be same as you've created in bintray
+    bintrayRepo = 'wonderful'
+
+    // Name which will be visible on bintray
+    bintrayName = 'CheckLibrary'
+
+    // Repository Link (For e.g. GitHub repo)
+    siteUrl = 'https://github.com/testacc-art/coroutines-test'
+    gitUrl = 'https://github.com/testacc-art/coroutines-test.git'
+    githubRepository= 'testacc-art/coroutines-test'
+
+    // License Details
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 plugins.withType<JavaPlugin> {
     extensions.configure<JavaPluginExtension> {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -117,24 +135,17 @@ publishing {
     }
 }
 
-val bintrayRepo: String by project
 bintray {
-    user = (findProperty("bintrayUser") ?: System.getenv("BINTRAY_USER"))?.toString()
-    key = (findProperty("bintrayKey") ?: System.getenv("BINTRAY_KEY"))?.toString()
-    setPublications(*publishing.publications.names.toTypedArray())
-    with(pkg) {
-        repo = bintrayRepo
-        name = "${project.group}:${project.name}"
-        desc = project.description
-        websiteUrl = "https://$gitHubUrl"
-        vcsUrl = "https://$gitHubUrl.git"
-        setLabels("kotlin", "kotlinx", "coroutines", "debug", "test", "junit5", "junit")
-        setLicenses(licenseName)
-        with(version) {
-            name = project.version.toString()
-        }
+    user = System.getenv("bintrayUser")
+    key = System.getenv("bintrayApiKey")
+
+    configurations = ['archives']
+    pkg {
+        repo = 
+        name = bintrayName
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
+        publish = true
     }
-    publish = true
-    override = false
-    dryRun = false
 }
