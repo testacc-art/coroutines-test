@@ -121,13 +121,16 @@ bintray {
     user = System.getenv("bintrayUser")
     key = System.getenv("bintrayApiKey")
 
-    configurations = ['archives']
-    pkg {
+     pkg(delegateClosureOf<BintrayExtension.PackageConfig> {
         repo = "wonderful"
         name = "CheckLibrary"
+        userOrg = "someorgid"
         websiteUrl = "https://github.com/testacc-art/coroutines-test"
+        githubRepo = "testacc-art/coroutines-test"
         vcsUrl = "https://github.com/testacc-art/coroutines-test.git"
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
+        description = "Some description"
+        setLabels("kotlin")
+        setLicenses("Apache-2.0")
+        desc = description
+    })
 }
