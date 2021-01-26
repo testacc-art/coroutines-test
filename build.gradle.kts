@@ -36,19 +36,19 @@ dependencies {
 
 ext {
     // This should be same as you've created in bintray
-    bintrayRepo = 'wonderful'
+    bintrayRepo = "wonderful"
 
     // Name which will be visible on bintray
-    bintrayName = 'CheckLibrary'
+    bintrayName = "CheckLibrary"
 
     // Repository Link (For e.g. GitHub repo)
-    siteUrl = 'https://github.com/testacc-art/coroutines-test'
-    gitUrl = 'https://github.com/testacc-art/coroutines-test.git'
-    githubRepository= 'testacc-art/coroutines-test'
+    siteUrl = "https://github.com/testacc-art/coroutines-test"
+    gitUrl = "https://github.com/testacc-art/coroutines-test.git"
+    githubRepository= "testacc-art/coroutines-test"
 
     // License Details
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    licenseName = "The Apache Software License, Version 2.0"
+    licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0.txt"
     allLicenses = ["Apache-2.0"]
 }
 
